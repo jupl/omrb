@@ -3,7 +3,7 @@ import React from 'react'
 import {render} from 'react-dom'
 
 if(module.hot) {
-  module.hot.accept('./root/component', () => setTimeout(renderRootOrError))
+  module.hot.accept('./_core/components', () => setTimeout(renderRootOrError))
   renderRootOrError()
 }
 else {
@@ -11,7 +11,7 @@ else {
 }
 
 function renderRoot() {
-  const {Root} = require('./root/component')
+  const {Root} = require('./_core/components')
   render(<Root />, global.container)
 }
 
