@@ -1,3 +1,4 @@
+.nyc_output
 dist
 
 # Created by https://www.gitignore.io/api/node
