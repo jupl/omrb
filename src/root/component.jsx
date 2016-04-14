@@ -1,9 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-export class Root extends Component {
-  render() {
-    return (
-      <div>Welcome</div>
-    )
-  }
+export function Root() {
+  return (
+    <div>Welcome</div>
+  )
 }

@@ -40,7 +40,7 @@ switch(process.env.NODE_ENV) {
 case 'development':
   config.devtool = 'inline-source-map'
   config.output.devtoolModuleFilenameTemplate = filenameTemplate
-  if(process.env.BABEL_ENV !== 'hot') { break }
+  if(process.env.NODE_HOT !== 'true') { break }
   config.plugins = config.plugins.concat([
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),

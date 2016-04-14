@@ -16,7 +16,7 @@
       "command": "node hot-server",
       "env": {
         "NODE_ENV": "development",
-        "BABEL_ENV": "hot"
+        "NODE_HOT": "true"
       }
     },
     "build:dev": {
@@ -45,7 +45,6 @@
     "babel-plugin-transform-runtime": "^6.7.5",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-react": "^6.5.0",
-    "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-2": "^6.5.0",
     "better-npm-run": "0.0.8",
     "copy-webpack-plugin": "^1.1.1",
@@ -59,6 +58,7 @@
     "globule": "^0.2.0",
     "hapi": "^13.3.0",
     "hapi-webpack-plugin": "^1.3.0",
+    "redbox-react": "^1.2.3",
     "style-loader": "^0.13.1",
     "trash": "^3.4.1",
     "webpack": "^1.12.15"

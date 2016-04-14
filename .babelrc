@@ -4,10 +4,5 @@
     "transform-inline-environment-variables",
     "transform-runtime"
   ],
-  "presets": ["react", "es2015", "stage-2"],
-  "env": {
-    "hot": {
-      "presets": ["react-hmre"]
-    }
-  }
+  "presets": ["react", "es2015", "stage-2"]
 }
