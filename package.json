@@ -47,7 +47,8 @@
   "dependencies": {
     "normalize.css": "^4.1.1",
     "react": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react-dom": "^15.0.1",
+    "react-prefixer": "^1.1.4"
   },
   "devDependencies": {
     "ava": "^0.14.0",
