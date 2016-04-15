@@ -1,9 +1,12 @@
 import 'normalize.css/normalize.css'
 import React from 'react'
 import {render} from 'react-dom'
+import App from './app/component'
+
+const container = global.container
 
 if(module.hot) {
-  module.hot.accept('./_core/components', () => setTimeout(renderRootOrError))
+  module.hot.accept('./app/component', () => setTimeout(renderRootOrError))
   renderRootOrError()
 }
 else {
@@ -11,8 +14,7 @@ else {
 }
 
 function renderRoot() {
-  const {Root} = require('./_core/components')
-  render(<Root />, global.container)
+  render(<App />, container)
 }
 
 function renderRootOrError() {
@@ -21,6 +23,6 @@ function renderRootOrError() {
   }
   catch(e) {
     const RedBox = require('redbox-react')
-    render(<RedBox error={e} />, global.container)
+    render(<RedBox error={e} />, container)
   }
 }
