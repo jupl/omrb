@@ -1,7 +1,6 @@
 import 'normalize.css/normalize.css'
 import React from 'react'
 import {render} from 'react-dom'
-import App from './app/component'
 
 const container = global.container
 
@@ -14,6 +13,7 @@ else {
 }
 
 function renderRoot() {
+  const App = require('./app/component').default
   render(<App />, container)
 }
 
