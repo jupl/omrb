@@ -1,5 +1,5 @@
 import React from 'react'
-import prefix from 'react-prefixer'
+import prefix from '../lib/prefix'
 
 const STYLE = prefix({
   width: '100%',
