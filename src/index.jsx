@@ -5,7 +5,7 @@ import {render} from 'react-dom'
 const container = global.container
 
 if(module.hot) {
-  module.hot.accept('./app/component', () => setTimeout(renderRootOrError))
+  module.hot.accept('./app/components', () => setTimeout(renderRootOrError))
   renderRootOrError()
 }
 else {
@@ -13,7 +13,7 @@ else {
 }
 
 function renderRoot() {
-  const App = require('./app/component').default
+  const App = require('./app/components').App
   render(<App />, container)
 }
 

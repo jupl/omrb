@@ -1,7 +1,7 @@
 import test from 'ava'
 import React from 'react'
 import {render} from 'enzyme'
-import App from './component'
+import {App} from './components'
 
 test('<App>', t => {
   const wrapper = render(<App />)
