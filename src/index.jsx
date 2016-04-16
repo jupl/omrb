@@ -13,7 +13,7 @@ else {
 }
 
 function renderRoot() {
-  const App = require('./app/components').default
+  const {App} = require('./app/components')
   render(<App />, container)
 }
 

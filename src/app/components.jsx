@@ -10,6 +10,6 @@ const STYLE = prefix({
   background: 'linear-gradient(white, gainsboro)',
 })
 
-export default function App() {
+export function App() {
   return <div style={STYLE}>Welcome</div>
 }
