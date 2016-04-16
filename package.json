@@ -65,7 +65,7 @@
     "css-loader": "^0.23.1",
     "enzyme": "^2.2.0",
     "eslint": "^2.7.0",
-    "eslint-config-jupl": "^0.3.2",
+    "eslint-config-jupl": "^0.3.3",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^4.3.0",
     "eventsource-polyfill": "^0.9.6",
