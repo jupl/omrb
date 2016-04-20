@@ -45,15 +45,7 @@
     }
   },
   "dependencies": {
-    "normalize.css": "^4.1.1",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
-    "react-prefixer": "^1.1.4"
-  },
-  "devDependencies": {
-    "ava": "^0.14.0",
     "babel-core": "^6.7.6",
-    "babel-eslint": "^6.0.2",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-inline-environment-variables": "^6.5.0",
     "babel-plugin-transform-runtime": "^6.7.5",
@@ -63,22 +55,30 @@
     "better-npm-run": "0.0.8",
     "copy-webpack-plugin": "^1.1.1",
     "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "globule": "^0.2.0",
+    "normalize.css": "^4.1.1",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-prefixer": "^1.1.4",
+    "style-loader": "^0.13.1",
+    "trash": "^3.4.1",
+    "webpack": "^1.12.15"
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "babel-eslint": "^6.0.2",
     "enzyme": "^2.2.0",
     "eslint": "^2.7.0",
     "eslint-config-jupl": "^0.3.4",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^4.3.0",
     "eventsource-polyfill": "^0.9.6",
-    "file-loader": "^0.8.5",
-    "globule": "^0.2.0",
     "hapi": "^13.3.0",
     "hapi-webpack-plugin": "^1.3.0",
     "jsdom": "^8.3.1",
     "nyc": "^6.4.0",
     "react-addons-test-utils": "^15.0.1",
-    "redbox-react": "^1.2.3",
-    "style-loader": "^0.13.1",
-    "trash": "^3.4.1",
-    "webpack": "^1.12.15"
+    "redbox-react": "^1.2.3"
   }
 }
