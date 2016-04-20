@@ -16,6 +16,7 @@
   "scripts": {
     "clean": "[ -d dist ] && trash dist || true",
     "lint": "eslint . --ext=js --ext=jsx",
+    "lint:fix": "npm run lint -- --fix",
     "coverage": "nyc npm test",
     "test": "ava",
     "test:watch": "ava --watch",
