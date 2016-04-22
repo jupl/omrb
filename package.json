@@ -13,6 +13,7 @@
     "npm": "^3.0.0"
   },
   "scripts": {
+    "start": "npm run build:prod",
     "clean": "[ -d dist ] && trash dist || true",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
