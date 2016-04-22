@@ -14,9 +14,8 @@ const hotModules = [
 const config = module.exports = {
   entry: entries(),
   output: {path: resolve('dist'), filename: '[name].js', publicPath: '/'},
-  resolve: {extensions: ['', '.js', '.jsx']},
   module: {loaders: [
-    {test: /\.jsx?$/, loader: 'babel', include: resolve('src')},
+    {test: /\.js$/, loader: 'babel', include: resolve('src')},
     {test: /\.css$/, loader: 'style!css'},
     {test: /\.(gif|jpg|jpeg|png|svg)$/, loader: 'file'},
   ]},
@@ -66,7 +65,7 @@ default:
 }
 
 function entries() {
-  return find(resolve('src/*.{js,jsx}')).reduce((obj, filename) => {
+  return find(resolve('src/*.js')).reduce((obj, filename) => {
     const name = path.basename(filename, path.extname(filename))
     obj[name] = filename
     return obj

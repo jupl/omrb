@@ -6,8 +6,7 @@
     "files": "src/**/*.test.js"
   },
   "nyc": {
-    "include": "src/**",
-    "extension": ".jsx"
+    "include": "src/**"
   },
   "engines": {
     "node": "^5.0.0",
@@ -15,7 +14,7 @@
   },
   "scripts": {
     "clean": "[ -d dist ] && trash dist || true",
-    "lint": "eslint . --ext=js --ext=jsx",
+    "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "coverage": "nyc npm test",
     "test": "ava",
