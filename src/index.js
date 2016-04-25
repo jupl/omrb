@@ -2,7 +2,9 @@ import 'normalize.css/normalize.css'
 import React from 'react'
 import {render} from 'react-dom'
 
-const container = global.container
+const {container} = global
+
+container.style.display = null
 
 if(module.hot) {
   module.hot.accept('./app/components', () => setTimeout(renderRootOrError))
