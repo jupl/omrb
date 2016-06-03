@@ -3,7 +3,10 @@
   "ava": {
     "babel": "inherit",
     "require": "./setup-tests",
-    "files": "src/**/*.test.js"
+    "files": [
+      "src/**/test.js",
+      "src/**/*.test.js"
+    ]
   },
   "nyc": {
     "include": "src/**"
