@@ -1,5 +1,5 @@
-import 'normalize.css/normalize.css'
 import React from 'react'
+import 'normalize.css/normalize.css'
 import {render} from 'react-dom'
 
 const {container} = global
