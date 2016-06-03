@@ -64,7 +64,6 @@
     "normalize.css": "^4.1.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "react-prefixer": "^1.1.4",
     "style-loader": "^0.13.1",
     "trash": "^3.4.1",
     "webpack": "^1.12.15"

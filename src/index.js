@@ -7,7 +7,9 @@ const {container} = global
 container.style.display = null
 
 if(module.hot) {
-  module.hot.accept('./app/components', () => setTimeout(renderRootOrError))
+  module.hot.accept('./app/components/root', () => {
+    setTimeout(renderRootOrError)
+  })
   renderRootOrError()
 }
 else {
@@ -15,8 +17,8 @@ else {
 }
 
 function renderRoot() {
-  const {App} = require('./app/components')
-  render(<App />, container)
+  const Root = require('./app/components/root').default
+  render(<Root />, container)
 }
 
 function renderRootOrError() {
