@@ -1,31 +1,53 @@
-/* eslint prefer-spread:0, prefer-reflect:0, prefer-rest-params:0 */
-
 const CopyPlugin = require('copy-webpack-plugin')
 const fs = require('fs')
-const find = require('globule').find
+const globule = require('globule')
 const path = require('path')
 const webpack = require('webpack')
 
+// When rewriting source map file paths, prepend a slash for Windows
 const protocol = process.platform === 'win32' ? 'file:///' : 'file://'
+
+// Modules requires for hot reloading in development
 const hotModules = [
   'eventsource-polyfill',
   'webpack-hot-middleware/client',
 ]
+
+// Build base Webpack configuration
 const config = module.exports = {
   entry: entries(),
-  output: {path: resolve('dist'), filename: '[name].js', publicPath: '/'},
-  module: {loaders: [
-    {test: /\.js$/, loader: 'babel', include: resolve('src')},
-    {test: /\.css$/, loader: 'style!css'},
-    {test: /\.(gif|jpg|jpeg|png|svg)$/, loader: 'file'},
-  ]},
+  output: {
+    path: resolve('dist'),
+    filename: '[name].js',
+    publicPath: '/',
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        include: resolve('src'),
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css',
+      },
+      {
+        test: /\.(gif|jpg|jpeg|png|svg)$/,
+        loader: 'file',
+      },
+    ],
+  },
   plugins: [new webpack.optimize.OccurrenceOrderPlugin()],
 }
 
+// If there are more than one generated JS files, create a file that contains
+// shared code among all generated JS files called common.js
 if(Object.keys(config.entry).length > 1) {
   config.plugins.push(new webpack.optimize.CommonsChunkPlugin('common'))
 }
 
+// If there is an assets folder, tell Webpack to copy contents as part of build
 try {
   const from = resolve('assets')
   fs.accessSync(from, fs.F_OK)
@@ -35,6 +57,9 @@ catch(e) {
   // Skip copy from assets
 }
 
+// Add additional Webpack configurations based on environment
+//  development - source maps, possible hot loading
+//  production - minification and optimization
 switch(process.env.NODE_ENV) {
 case 'development':
   config.devtool = 'inline-source-map'
@@ -45,9 +70,6 @@ case 'development':
     new webpack.NoErrorsPlugin(),
   ])
   Object.keys(config.entry).forEach(key => {
-    if(typeof config.entry[key] === 'string') {
-      config.entry[key] = [config.entry[key]]
-    }
     if(!Array.isArray(config.entry[key])) { return }
     config.entry[key] = hotModules.concat(config.entry[key])
   })
@@ -64,19 +86,22 @@ case 'production':
 default:
 }
 
+// Find all top-level JS files in src to compile to build an entries object
+// for Webpack
 function entries() {
-  return find(resolve('src/*.js')).reduce((obj, filename) => {
+  return globule.find(resolve('src/*.js')).reduce((obj, filename) => {
     const name = path.basename(filename, path.extname(filename))
-    obj[name] = filename
+    obj[name] = [filename]
     return obj
   }, {})
 }
 
-function resolve() {
-  const args = [__dirname].concat(Array.from(arguments))
-  return path.join.apply(path, args)
+// Build a path relative to this current one
+function resolve(...args) {
+  return path.join(__dirname, ...args)
 }
 
-function filenameTemplate(h) {
-  return `${protocol}${h.absoluteResourcePath.split(path.sep).join('/')}`
+// Build a new resource path for source maps with respect to the OS
+function filenameTemplate({absoluteResourcePath}) {
+  return `${protocol}${absoluteResourcePath.split(path.sep).join('/')}`
 }
