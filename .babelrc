@@ -1,5 +1,5 @@
 {
-  "only": ["src"],
+  "only": ["src", "node_modules/react"],
   "plugins": [
     "transform-inline-environment-variables",
     "transform-runtime"
