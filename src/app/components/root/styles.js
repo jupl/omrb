@@ -1,3 +1,4 @@
+/** Styling for root page */
 export const PAGE = {
   width: '100%',
   height: '100%',
