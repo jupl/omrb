@@ -9,7 +9,11 @@
     ]
   },
   "nyc": {
-    "include": "src/**"
+    "include": "src/**",
+    "exclude": [
+      "src/**/test.js",
+      "src/**/*.test.js"
+    ]
   },
   "engines": {
     "node": "^6.0.0",
@@ -17,16 +21,15 @@
   },
   "scripts": {
     "start": "npm run build:prod",
-    "clean:safe": "[ -d dist ] && npm run clean || true",
-    "clean": "trash dist",
+    "clean": "[ -d dist ] && trash dist || true",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "coverage": "nyc npm test",
+    "coverage": "nyc npm test && nyc report --reporter=html",
     "test": "ava",
-    "test:watch": "ava --watch",
+    "test:watch": "npm run test -- --watch",
     "server": "cross-env NODE_ENV=development NODE_HOT=true node hot-server",
-    "build:dev": "npm run clean:safe && cross-env NODE_ENV=development webpack",
-    "build:prod": "npm run clean:safe && cross-env NODE_ENV=production webpack"
+    "build:dev": "npm run clean && cross-env NODE_ENV=development webpack",
+    "build:prod": "npm run clean && cross-env NODE_ENV=production webpack"
   },
   "dependencies": {
     "babel-core": "^6.7.6",
