@@ -80,6 +80,7 @@ case 'production':
       output: {comments: false},
     }),
     new webpack.optimize.DedupePlugin(),
+    new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
   ])
   break
 default:
