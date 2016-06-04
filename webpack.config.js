@@ -26,7 +26,6 @@ const config = module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-        include: resolve('src'),
       },
       {
         test: /\.css$/,
