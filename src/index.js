@@ -6,39 +6,38 @@ import {render as renderToDOM} from 'react-dom'
 const {container} = global
 container.style.display = null
 
-// If in production, render root component. Otherwise render component or an
-// error message if failed to render.
-const production = process.env.NODE_ENV === 'production'
-const render = production ? renderRoot : renderRootOrError
-
-// Render root, and register to rerender if hot loading is available
+// Render application, and register to rerender if hot loading is available
 if(module.hot) {
   module.hot.accept('./app/components/root', () => setTimeout(render))
 }
 render()
 
 /**
- * Render root component to the container. This may be called multiple times
- * to rerender when a hot reload occurs.
+ * Render application to the container. If we are not in production and an
+ * error is encountered the error is rendered to the screen instead. This may
+ * be called multiple times to rerender when a hot reload occurs.
+ * @return {undefined} Nothing
+ */
+function render() {
+  if(process.env.NODE_ENV === 'production') {
+    renderRoot()
+  }
+  else {
+    try {
+      renderRoot()
+    }
+    catch(e) {
+      const RedBox = require('redbox-react')
+      renderToDOM(<RedBox error={e} />, container)
+    }
+  }
+}
+
+/**
+ * Render root component to the container
  * @return {undefined} Nothing
  */
 function renderRoot() {
   const Root = require('./app/components/root').default
   renderToDOM(<Root />, container)
-}
-
-/**
- * Try to render root component to the container. If an error is encountered
- * the error is displayed to the screen instead. This may be called multiple
- * times to rerender when a hot reload occurs.
- * @return {undefined} Nothing
- */
-function renderRootOrError() {
-  try {
-    renderRoot()
-  }
-  catch(e) {
-    const RedBox = require('redbox-react')
-    renderToDOM(<RedBox error={e} />, container)
-  }
 }
