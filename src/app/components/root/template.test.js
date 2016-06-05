@@ -1,10 +1,11 @@
 import React from 'react'
+import {Text} from 'react-native'
 import test from 'ava'
-import {render} from 'enzyme'
+import {shallow} from 'enzyme'
 import Root from './template'
 
 /** @test {Root} */
 test('<Root>', t => {
-  const wrapper = render(<Root />)
-  t.is(wrapper.text(), 'Welcome')
+  const wrapper = shallow(<Root />)
+  t.true(wrapper.contains(<Text>Welcome</Text>))
 })

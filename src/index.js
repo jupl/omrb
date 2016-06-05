@@ -1,37 +1,20 @@
-import React from 'react'
-import 'normalize.css/normalize.css'
-import {render as renderToDOM} from 'react-dom'
+import {AppRegistry} from 'react-native'
+import Root from './app/components/root'
 
-// Reference app container and unhide it before rendering to
-const {container} = global
-container.style.display = null
-
-// Render application, and register to rerender if hot loading is available
-if(module.hot) {
-  module.hot.accept('./app/components/root', () => setTimeout(render))
-}
-render()
+// Supported platforms for React Native
+const PLATFORMS = ['android', 'ios']
 
 /**
- * Render application to the container. If we are not in production and an
- * error is encountered the error is rendered to the screen. This may be called
- * multiple times to rerender when a hot reload occurs.
- * @return {void} Nothing
+ * Entry point for application
+ * @param {String} platform - Native platform application is running in
+ * @return {void}
  */
-function render() {
-  try {
-    // For hot loading support require is used instead of import so that if
-    // this function is called again, then the updated code is loaded
-    const Root = require('./app/components/root').default
-    renderToDOM(<Root />, container)
+export default function start(platform) {
+  // Throw error if platform is not supported
+  if(!PLATFORMS.includes(platform)) {
+    throw new Error('Platform is not supported')
   }
-  catch(e) {
-    if(process.env.NODE_ENV !== 'production') {
-      // Production builds will not have this code included, which is why
-      // require is used instead of import to exclude redbox code
-      const RedBox = require('redbox-react')
-      renderToDOM(<RedBox error={e} />, container)
-    }
-    throw e
-  }
+
+  // Tell React Native to use our root component to render application
+  AppRegistry.registerComponent('App', () => Root)
 }

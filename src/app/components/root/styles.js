@@ -1,8 +1,6 @@
 /** Styling for root page */
-export const PAGE = {
-  width: '100%',
-  height: '100%',
-  display: 'flex',
+export const CONTAINER = {
+  flex: 1,
   justifyContent: 'center',
   alignItems: 'center',
   background: 'linear-gradient(white, gainsboro)',
