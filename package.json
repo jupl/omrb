@@ -2,7 +2,10 @@
   "private": true,
   "ava": {
     "babel": "inherit",
-    "require": "./setup-tests",
+    "require": [
+      "babel-register",
+      "./setup-tests"
+    ],
     "files": "src/**/*.test.js"
   },
   "nyc": {
