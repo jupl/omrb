@@ -16,7 +16,7 @@ render()
  * Render application to the container. If we are not in production and an
  * error is encountered the error is rendered to the screen. This may be called
  * multiple times to rerender when a hot reload occurs.
- * @return {undefined} Nothing
+ * @return {void} Nothing
  */
 function render() {
   try {
