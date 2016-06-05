@@ -18,13 +18,14 @@
     "clean": "[ -d dist ] && trash dist || true",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "coverage": "npm run coverage:base -- --reporter=html",
-    "coverage:base": "nyc npm test && nyc report",
+    "coverage": "nyc npm test",
+    "coverage:html": "npm run coverage && nyc report --reporter=html",
     "test": "ava",
     "test:watch": "npm run test -- --watch",
     "server": "cross-env NODE_ENV=development NODE_HOT=true node hot-server",
-    "build:dev": "npm run clean && cross-env NODE_ENV=development webpack",
-    "build:prod": "npm run clean && cross-env NODE_ENV=production webpack"
+    "build": "npm run clean && webpack",
+    "build:dev": "cross-env NODE_ENV=development npm run build",
+    "build:prod": "cross-env NODE_ENV=production npm run build"
   },
   "dependencies": {
     "babel-core": "^6.9.1",
