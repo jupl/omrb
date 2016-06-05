@@ -22,10 +22,10 @@
     "coverage:html": "npm run coverage && nyc report --reporter=html",
     "test": "ava",
     "test:watch": "npm run test -- --watch",
-    "server": "cross-env NODE_ENV=development NODE_HOT=true node hot-server",
+    "server": "cross-env NODE_ENV=development HOT_MODULES=true node hot-server",
     "build": "npm run clean && webpack",
-    "build:dev": "cross-env NODE_ENV=development npm run build",
-    "build:prod": "cross-env NODE_ENV=production npm run build"
+    "build:dev": "cross-env NODE_ENV=development HOT_MODULES=false npm run build",
+    "build:prod": "cross-env NODE_ENV=production HOT_MODULES=false npm run build"
   },
   "dependencies": {
     "babel-core": "^6.9.1",
