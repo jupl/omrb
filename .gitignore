@@ -2,6 +2,10 @@
 .idea
 dist
 project.xcworkspace
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore
 
 # Created by https://www.gitignore.io/api/node,xcode,android
 
