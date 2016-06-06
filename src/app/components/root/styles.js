@@ -3,5 +3,10 @@ export const CONTAINER = {
   flex: 1,
   justifyContent: 'center',
   alignItems: 'center',
-  background: 'linear-gradient(white, gainsboro)',
+  backgroundColor: 'white',
+}
+
+/** Styling for text **/
+export const TEXT = {
+  fontSize: 24,
 }
