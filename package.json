@@ -18,6 +18,7 @@
     "npm": "^3.0.0"
   },
   "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "coverage": "nyc npm test",
