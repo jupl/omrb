@@ -1,4 +1,0 @@
-{
-  "only": ["src"],
-  "presets": ["react", "modern-node/6.0", "stage-2"]
-}

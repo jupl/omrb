@@ -1,7 +1,9 @@
 {
   "private": true,
   "ava": {
-    "babel": "inherit",
+    "babel": {
+      "presets": ["react", "modern-node/6.0", "stage-2"]
+    },
     "require": [
       "babel-register",
       "babel-polyfill",
