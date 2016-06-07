@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, Text} from 'react-native'
+import {Platform, StyleSheet, Text, View} from 'react-native'
 import * as rawStyles from './styles'
 
 // Create React Native stylesheet from style data
@@ -12,7 +12,7 @@ const styles = StyleSheet.create(rawStyles)
 export default function Root() {
   return (
     <View style={styles.CONTAINER}>
-      <Text style={styles.TEXT}>Welcome</Text>
+      <Text style={styles.TEXT}>Welcome to {Platform.OS}</Text>
     </View>
   )
 }
