@@ -1,0 +1,5 @@
+{
+  "only": ["src", "node_modules/react-native"],
+  "plugins": ["transform-runtime"],
+  "presets": ["react-native"]
+}
