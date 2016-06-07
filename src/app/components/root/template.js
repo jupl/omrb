@@ -5,6 +5,9 @@ import * as rawStyles from './styles'
 // Create React Native stylesheet from style data
 const styles = StyleSheet.create(rawStyles)
 
+// OS text to display
+const OS = Platform.select({ios: 'iOS', android: 'Android'})
+
 /**
  * Render root component representing the entire application
  * @return {ReactElement} Root component
@@ -12,7 +15,7 @@ const styles = StyleSheet.create(rawStyles)
 export default function Root() {
   return (
     <View style={styles.CONTAINER}>
-      <Text style={styles.TEXT}>Welcome to {Platform.OS}</Text>
+      <Text style={styles.TEXT}>Welcome to {OS}</Text>
     </View>
   )
 }
