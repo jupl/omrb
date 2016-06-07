@@ -1,21 +1,22 @@
 import React from 'react'
-import {Platform, StyleSheet, Text, View} from 'react-native'
+import {Provider} from 'react-redux'
+import ColorPage from '../../../color/components/page'
+import {StyleSheet} from 'react-native'
 import * as rawStyles from './styles'
 
 // Create React Native stylesheet from style data
 const styles = StyleSheet.create(rawStyles)
 
-// OS text to display
-const OS = Platform.select({ios: 'iOS', android: 'Android'})
-
 /**
  * Render root component representing the entire application
+ * @param {Object} props - Component properties passed on
+ * @param {Object} props.store - Redux store instance
  * @return {ReactElement} Root component
  */
-export default function Root() {
+export default function Root({store}) {
   return (
-    <View style={styles.CONTAINER}>
-      <Text style={styles.TEXT}>Welcome to {OS}</Text>
-    </View>
+    <Provider store={store}>
+      <ColorPage style={styles.CONTAINER} />
+    </Provider>
   )
 }
