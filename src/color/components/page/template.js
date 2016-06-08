@@ -1,5 +1,11 @@
 import React from 'react'
-import {Platform, StyleSheet, Text, View} from 'react-native'
+import {
+  Platform,
+  StyleSheet,
+  TouchableHighlight,
+  Text,
+  View,
+} from 'react-native'
 import * as rawStyles from './styles'
 
 // Create React Native stylesheet from style data
@@ -22,13 +28,17 @@ export default function ColorPage({actions, color, style = {}}) {
   const bgStyle = {backgroundColor: color}
   return (
     <View style={[style, styles.BACKGROUND, bgStyle]}>
-      <Text style={styles.BUTTON} onPress={() => actions.previousColor()}>
-        PREV
-      </Text>
+      <TouchableHighlight
+          style={styles.BUTTON}
+          onPress={() => actions.previousColor()}>
+        <Text>&lt;</Text>
+      </TouchableHighlight>
       <Text style={styles.TEXT}>Welcome to {OS}</Text>
-      <Text style={styles.BUTTON} onPress={() => actions.nextColor()}>
-        NEXT
-      </Text>
+      <TouchableHighlight
+          style={styles.BUTTON}
+          onPress={() => actions.nextColor()}>
+        <Text>&gt;</Text>
+      </TouchableHighlight>
     </View>
   )
 }
