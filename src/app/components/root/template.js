@@ -1,4 +1,5 @@
 import React from 'react'
+import {Router, Scene} from 'react-native-router-flux'
 import {Provider} from 'react-redux'
 import ColorPage from '../../../color/components/page'
 import {StyleSheet} from 'react-native'
@@ -16,7 +17,19 @@ const styles = StyleSheet.create(rawStyles)
 export default function Root({store}) {
   return (
     <Provider store={store}>
-      <ColorPage style={styles.CONTAINER} />
+      <Router>
+        <Scene key="root">
+          <Scene initial hideNavBar key="home" component={FullColorPage} />
+        </Scene>
+      </Router>
     </Provider>
   )
+}
+
+/**
+ * Maximize color page component for route
+ * @return {ReactElement} Maximized color page component
+ */
+function FullColorPage() {
+  return <ColorPage style={styles.CONTAINER} />
 }

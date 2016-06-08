@@ -4532,6 +4532,16 @@
         }
       }
     },
+    "react-native-router-flux": {
+      "version": "3.26.17",
+      "from": "react-native-router-flux@latest",
+      "resolved": "https://registry.npmjs.org/react-native-router-flux/-/react-native-router-flux-3.26.17.tgz"
+    },
+    "react-native-tabs": {
+      "version": "1.0.7",
+      "from": "react-native-tabs@1.0.7",
+      "resolved": "https://registry.npmjs.org/react-native-tabs/-/react-native-tabs-1.0.7.tgz"
+    },
     "react-proxy": {
       "version": "1.1.8",
       "from": "react-proxy@>=1.1.7 <2.0.0",
@@ -4541,6 +4551,11 @@
       "version": "4.4.5",
       "from": "react-redux@>=4.4.5 <5.0.0",
       "resolved": "https://registry.npmjs.org/react-redux/-/react-redux-4.4.5.tgz"
+    },
+    "react-static-container": {
+      "version": "1.0.1",
+      "from": "react-static-container@1.0.1",
+      "resolved": "https://registry.npmjs.org/react-static-container/-/react-static-container-1.0.1.tgz"
     },
     "react-timer-mixin": {
       "version": "0.13.3",
