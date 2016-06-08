@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "cross-env": "^1.0.8",
-    "react": "^15.1.0",
-    "react-native": "^0.27.1",
+    "react": "^15.0.2",
+    "react-native": "^0.26.3",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-actions": "^0.9.1",
@@ -43,9 +43,9 @@
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^5.1.1",
     "nyc": "^6.4.4",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-native-mock": "^0.2.3",
+    "react-addons-test-utils": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-native-mock": "^0.2.2",
     "remote-redux-devtools": "^0.3.3",
     "sinon": "^1.17.4"
   }
