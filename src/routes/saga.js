@@ -22,7 +22,7 @@ export default function* saga() {
  * @return {void}
  */
 function pushRoute({payload: {key, params}}) {
-  Actions[key](params)
+  Actions[key]({params})
 }
 
 /**
@@ -33,5 +33,5 @@ function pushRoute({payload: {key, params}}) {
  * @return {void}
  */
 function refreshRoute({payload: {params}}) {
-  Actions.refresh(params)
+  Actions.refresh({params})
 }
