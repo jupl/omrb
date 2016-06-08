@@ -1,8 +1,9 @@
 import React from 'react'
-import {Router, Scene} from 'react-native-router-flux'
+import {Scene} from 'react-native-router-flux'
 import {Provider} from 'react-redux'
-import ColorPage from '../../../color/components/page'
 import {StyleSheet} from 'react-native'
+import ColorPage from '../../../color/components/page'
+import Router from '../../../routes/components/router'
 import * as rawStyles from './styles'
 
 // Create React Native stylesheet from style data
