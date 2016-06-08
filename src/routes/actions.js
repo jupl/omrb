@@ -16,7 +16,7 @@ export const refreshRoute = createAction('ROUTES_REFRESH', refresh)
  * @return {Object} Action data
  */
 function push(key, params) {
-  return {key, params}
+  return params != null ? {key, params} : {key}
 }
 
 /**
@@ -25,5 +25,5 @@ function push(key, params) {
  * @return {Object} Action data
  */
 function refresh(params) {
-  return {params}
+  return params != null ? {params} : {}
 }
