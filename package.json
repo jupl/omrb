@@ -1,4 +1,6 @@
 {
+  "name": "Application",
+  "version": "0.0.1",
   "private": true,
   "ava": {
     "babel": "inherit",
