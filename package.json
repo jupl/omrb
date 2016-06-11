@@ -6,6 +6,7 @@
     "babel": "inherit",
     "require": [
       "babel-register",
+      "babel-polyfill",
       "react-native-mock/mock"
     ],
     "files": "src/**/*.test.js"
