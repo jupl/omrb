@@ -1,18 +1,10 @@
 import React from 'react'
-import {
-  Platform,
-  StyleSheet,
-  TouchableHighlight,
-  Text,
-  View,
-} from 'react-native'
+import {StyleSheet, TouchableHighlight, Text, View} from 'react-native'
 import * as rawStyles from './styles'
+import * as platform from '../../../lib/platform'
 
 // Create React Native stylesheet from style data
 const styles = StyleSheet.create(rawStyles)
-
-// OS text to display
-const OS = Platform.select({ios: 'iOS', android: 'Android'})
 
 /**
  * Render color page component showing current color and buttons to change
@@ -33,7 +25,7 @@ export default function ColorPage({actions, color, style = {}}) {
           onPress={() => actions.previousColor()}>
         <Text>&lt;</Text>
       </TouchableHighlight>
-      <Text style={styles.TEXT}>Welcome to {OS}</Text>
+      <Text style={styles.TEXT}>Welcome to {platform.NAME}</Text>
       <TouchableHighlight
           style={styles.BUTTON}
           onPress={() => actions.nextColor()}>

@@ -1,21 +1,29 @@
 import React from 'react'
+import {Text, TouchableHighlight} from 'react-native'
 import test from 'ava'
-import {mount, render} from 'enzyme'
+import {shallow} from 'enzyme'
 import {spy} from 'sinon'
 import ColorPage from './template'
+import * as styles from './styles'
+import * as platform from '../../../lib/platform'
 
 /** @test {color.components.Page} */
+// TODO Try to remove use of intermediate variable
 test('<ColorPage> - content', t => {
-  const wrapper = render(<ColorPage actions={{}} />)
-  t.true(wrapper.text().includes('Welcome'))
+  const wrapper = shallow(<ColorPage actions={{}} />)
+  const contains = wrapper.contains(
+    <Text style={styles.TEXT}>Welcome to {platform.NAME}</Text>
+  )
+  t.true(contains)
 })
 
 /** @test {color.components.Page} */
 test('<ColorPage> - additional styles', t => {
-  const wrapper1 = render(<ColorPage actions={{}} />)
-  const wrapper2 = render(<ColorPage actions={{}} style={{top: 0}} />)
-  t.not(wrapper1.children().prop('style').top, '0')
-  t.is(wrapper2.children().prop('style').top, '0')
+  const override = {top: 0}
+  const wrapper1 = shallow(<ColorPage actions={{}} />)
+  const wrapper2 = shallow(<ColorPage actions={{}} style={override} />)
+  t.false(wrapper1.prop('style').includes(override))
+  t.true(wrapper2.prop('style').includes(override))
 })
 
 /** @test {color.components.Page} */
@@ -24,18 +32,19 @@ test('<ColorPage> - events', t => {
     previousColor: spy(),
     nextColor: spy(),
   }
-  const buttons = mount(<ColorPage actions={actions} />).find('button')
+  const wrapper = shallow(<ColorPage actions={actions} />)
+  const buttons = wrapper.find(TouchableHighlight)
   const previousButton = buttons.at(0)
   const nextButton = buttons.at(1)
 
   t.false(actions.previousColor.called)
   t.false(actions.nextColor.called)
 
-  previousButton.simulate('click')
+  previousButton.simulate('press')
   t.true(actions.previousColor.calledOnce)
   t.false(actions.nextColor.called)
 
-  nextButton.simulate('click')
+  nextButton.simulate('press')
   t.true(actions.previousColor.calledOnce)
   t.true(actions.nextColor.calledOnce)
 })
