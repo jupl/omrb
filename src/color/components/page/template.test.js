@@ -1,19 +1,16 @@
 import React from 'react'
-import {Text, TouchableHighlight} from 'react-native'
+import {TouchableHighlight} from 'react-native'
 import test from 'ava'
 import {shallow} from 'enzyme'
 import {spy} from 'sinon'
 import ColorPage from './template'
-import * as styles from './styles'
 import * as platform from '../../../lib/platform'
 
 /** @test {color.components.Page} */
 // TODO Try to remove use of intermediate variable
 test('<ColorPage> - content', t => {
   const wrapper = shallow(<ColorPage actions={{}} />)
-  const contains = wrapper.contains(
-    <Text style={styles.TEXT}>Welcome to {platform.NAME}</Text>
-  )
+  const contains = wrapper.contains(['Welcome to ', platform.NAME])
   t.true(contains)
 })
 
