@@ -7,11 +7,9 @@ import ColorPage from './template'
 import * as platform from '../../../lib/platform'
 
 /** @test {color.components.Page} */
-// TODO Try to remove use of intermediate variable
 test('<ColorPage> - content', t => {
   const wrapper = shallow(<ColorPage actions={{}} />)
-  const contains = wrapper.contains(['Welcome to ', platform.NAME])
-  t.true(contains)
+  t.true(wrapper.contains(['Welcome to ', platform.NAME]))
 })
 
 /** @test {color.components.Page} */
