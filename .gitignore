@@ -1,6 +1,5 @@
 .tern-port
 .idea
-dist
 project.xcworkspace
 buck-out/
 \.buckd/
