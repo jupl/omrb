@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component, PropTypes} from 'react'
 import {StyleSheet, TouchableHighlight, Text, View} from 'react-native'
 import * as rawStyles from './styles'
 import * as platform from '../../../lib/platform'
@@ -16,21 +16,35 @@ const styles = StyleSheet.create(rawStyles)
  * @param {?Object} props.style - Optional additional styling for component
  * @return {ReactElement} Color page component
  */
-export default function ColorPage({actions, color, style = {}}) {
-  const bgStyle = {backgroundColor: color}
-  return (
-    <View style={[style, styles.BACKGROUND, bgStyle]}>
-      <TouchableHighlight
-          style={styles.BUTTON}
-          onPress={() => actions.previousColor()}>
-        <Text>&lt;</Text>
-      </TouchableHighlight>
-      <Text style={styles.TEXT}>Welcome to {platform.NAME}</Text>
-      <TouchableHighlight
-          style={styles.BUTTON}
-          onPress={() => actions.nextColor()}>
-        <Text>&gt;</Text>
-      </TouchableHighlight>
-    </View>
-  )
+/* export default function ColorPage({actions, color, style = {}}) {*/
+
+export default class Root extends Component {
+  static propTypes = {
+    actions: PropTypes.shape({
+      previousColor: PropTypes.func.isRequired,
+      nextColor: PropTypes.func.isRequired,
+    }),
+    color: PropTypes.string.isRequired,
+    style: View.propTypes.style,
+  }
+
+  render() {
+    const {actions, color, style} = this.props
+    const bgStyle = {backgroundColor: color}
+    return (
+      <View style={[style, styles.BACKGROUND, bgStyle]}>
+        <TouchableHighlight
+            style={styles.BUTTON}
+            onPress={() => actions.previousColor()}>
+          <Text>&lt;</Text>
+        </TouchableHighlight>
+        <Text style={styles.TEXT}>Welcome to {platform.NAME}</Text>
+        <TouchableHighlight
+            style={styles.BUTTON}
+            onPress={() => actions.nextColor()}>
+          <Text>&gt;</Text>
+        </TouchableHighlight>
+      </View>
+    )
+  }
 }

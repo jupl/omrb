@@ -7,11 +7,11 @@ import createStore from './app/store'
 class Application extends Component {
   constructor(...args) {
     super(...args)
-    this.store = createStore()
+    this.state = {store: createStore()}
   }
 
   render() {
-    return <Root store={this.store} />
+    return <Root store={this.state.store} />
   }
 }
 
