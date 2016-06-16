@@ -6,18 +6,7 @@ import * as platform from '../../../lib/platform'
 // Create React Native stylesheet from style data
 const styles = StyleSheet.create(rawStyles)
 
-/**
- * Render color page component showing current color and buttons to change
- * @param {Object} props - Component properties passed on
- * @param {Object} props.actions- Actions that are called in response to events
- * @param {Object} props.actions.previousColor - Action for previous color
- * @param {Object} props.actions.nextColor - Action for next color
- * @param {string} props.color - CSS color to show
- * @param {?Object} props.style - Optional additional styling for component
- * @return {ReactElement} Color page component
- */
-/* export default function ColorPage({actions, color, style = {}}) {*/
-
+/** Color page component showing current color and buttons to change */
 export default class Root extends Component {
   static propTypes = {
     actions: PropTypes.shape({
