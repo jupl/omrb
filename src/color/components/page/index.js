@@ -1,10 +1,11 @@
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import ColorPage from './template'
+import merge from '../../../lib/merge'
 import {nextColor, previousColor} from '../../actions'
 
 /** Wrap color page component with data from store */
-export default connect(props, actions)(ColorPage)
+export default connect(props, actions, merge)(ColorPage)
 
 /**
  * Add Redux store data as properties to component
@@ -22,5 +23,5 @@ function props({color}) {
  * @return {Object} Props to pass to component
  */
 function actions(dispatch) {
-  return {actions: bindActionCreators({nextColor, previousColor}, dispatch)}
+  return bindActionCreators({nextColor, previousColor}, dispatch)
 }
