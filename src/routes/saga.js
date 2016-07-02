@@ -1,5 +1,6 @@
 import {takeEvery} from 'redux-saga'
 import {Actions} from 'react-native-router-flux'
+import {ACTION_TYPES} from './constants'
 
 /**
  * Start process to listen in on route actions
@@ -7,9 +8,9 @@ import {Actions} from 'react-native-router-flux'
  */
 export default function* saga() {
   yield [
-    takeEvery('ROUTES_POP', () => Actions.pop()),
-    takeEvery('ROUTES_PUSH', pushRoute),
-    takeEvery('ROUTES_REFRESH', refreshRoute),
+    takeEvery(ACTION_TYPES.POP_ROUTE, () => Actions.pop()),
+    takeEvery(ACTION_TYPES.PUSH_ROUTE, pushRoute),
+    takeEvery(ACTION_TYPES.REFRESH, refreshRoute),
   ]
 }
 
