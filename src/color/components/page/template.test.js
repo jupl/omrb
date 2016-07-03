@@ -6,33 +6,37 @@ import {spy} from 'sinon'
 import ColorPage from './template'
 import * as platform from '../../../lib/platform'
 
-const defaultProps = {
-  actions: {},
-  color: 'white',
-}
+let props
+
+test.beforeEach('reset props', () => {
+  props = {
+    actions: {
+      previousColor: spy(),
+      nextColor: spy(),
+    },
+    color: 'white',
+  }
+})
 
 /** @test {color.components.Page} */
 test('<ColorPage> - content', t => {
-  const wrapper = shallow(<ColorPage {...defaultProps} />)
+  const wrapper = shallow(<ColorPage {...props} />)
   t.true(wrapper.contains(['Welcome to ', platform.NAME]))
 })
 
 /** @test {color.components.Page} */
 test('<ColorPage> - additional styles', t => {
   const override = {top: 0}
-  const wrapper1 = shallow(<ColorPage {...defaultProps} />)
-  const wrapper2 = shallow(<ColorPage {...defaultProps} style={override} />)
+  const wrapper1 = shallow(<ColorPage {...props} />)
+  const wrapper2 = shallow(<ColorPage {...props} style={override} />)
   t.false(wrapper1.prop('style').includes(override))
   t.true(wrapper2.prop('style').includes(override))
 })
 
 /** @test {color.components.Page} */
 test('<ColorPage> - events', t => {
-  const actions = {
-    previousColor: spy(),
-    nextColor: spy(),
-  }
-  const wrapper = shallow(<ColorPage {...defaultProps} actions={actions} />)
+  const {actions} = props
+  const wrapper = shallow(<ColorPage {...props} />)
   const buttons = wrapper.find(TouchableHighlight)
   const previousButton = buttons.at(0)
   const nextButton = buttons.at(1)
