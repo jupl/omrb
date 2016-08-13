@@ -1,11 +1,12 @@
 import {handleActions} from 'redux-actions'
-import {ACTION_TYPES, COLORS} from './constants'
+import {previousColor, nextColor, autoNextColor} from './actions'
+import {COLORS} from './config'
 
 /** Reducer that handles color related actions */
 export default handleActions({
-  [ACTION_TYPES.PREVIOUS_COLOR]: previousColor,
-  [ACTION_TYPES.NEXT_COLOR]: nextColor,
-  [ACTION_TYPES.AUTO_NEXT_COLOR]: nextColor,
+  [previousColor.type]: setPreviousColor,
+  [nextColor.type]: setNextColor,
+  [autoNextColor.type]: setNextColor,
 }, COLORS[0])
 
 /**
@@ -14,7 +15,7 @@ export default handleActions({
  * @param {string} state - Current color state
  * @return {string} Previous color state
  */
-function previousColor(state) {
+function setPreviousColor(state) {
   const oldIndex = COLORS.indexOf(state)
   const newIndex = (oldIndex + COLORS.length - 1) % COLORS.length
   return COLORS[newIndex]
@@ -26,7 +27,7 @@ function previousColor(state) {
  * @param {string} state - Current color state
  * @return {string} Next color state
  */
-function nextColor(state) {
+function setNextColor(state) {
   const oldIndex = COLORS.indexOf(state)
   const newIndex = (oldIndex + 1) % COLORS.length
   return COLORS[newIndex]
