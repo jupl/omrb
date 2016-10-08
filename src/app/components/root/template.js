@@ -1,17 +1,16 @@
 import React, {Component} from 'react'
-import {StyleSheet, Text, View} from 'react-native'
-import * as platform from '../../../lib/platform'
+import {Platform, StyleSheet, Text, View} from 'react-native'
 import * as rawStyles from './styles'
 
 // Create React Native stylesheet from style data
-const styles = StyleSheet.create(rawStyles)
+const {CONTAINER_STYLE, TEXT_STYLE} = StyleSheet.create(rawStyles)
 
 /** Root component that represents the entire application */
 export default class Root extends Component {
   render() {
     return (
-      <View style={styles.CONTAINER}>
-        <Text style={styles.TEXT}>Welcome to {platform.NAME}</Text>
+      <View style={CONTAINER_STYLE}>
+        <Text style={TEXT_STYLE}>Welcome to {Platform.OS}</Text>
       </View>
     )
   }

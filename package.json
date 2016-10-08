@@ -2,48 +2,36 @@
   "name": "Application",
   "version": "0.0.1",
   "private": true,
-  "ava": {
-    "babel": "inherit",
-    "require": [
-      "babel-register",
-      "babel-polyfill",
-      "react-native-mock/mock"
-    ],
-    "files": "src/**/*.test.js"
-  },
-  "nyc": {
-    "include": "src/**",
-    "exclude": "src/**/*.test.js"
-  },
   "engines": {
     "node": "^6.0.0",
     "npm": "^3.0.0"
   },
+  "jest": {
+    "preset": "jest-react-native"
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "coverage": "jest --coverage",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "coverage": "nyc npm test",
-    "coverage:html": "npm run coverage && nyc report --reporter=html",
-    "test": "ava",
-    "test:watch": "npm run test -- --watch"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
-    "cross-env": "^1.0.8",
-    "react": "^15.1.0",
-    "react-native": "^0.27.1"
+    "cross-env": "^3.1.1",
+    "react": "~15.3.2",
+    "react-native": "^0.34.1"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
-    "babel-eslint": "^6.0.4",
-    "enzyme": "^2.3.0",
-    "eslint": "^2.11.1",
-    "eslint-config-jupl": "^0.3.5",
+    "babel-eslint": "^7.0.0",
+    "enzyme": "^2.4.1",
+    "eslint": "^3.7.1",
+    "eslint-config-jupl": "^0.4.0",
     "eslint-plugin-babel": "^3.2.0",
-    "eslint-plugin-react": "^5.1.1",
-    "nyc": "^6.4.4",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-native-mock": "^0.2.2"
+    "eslint-plugin-react": "^6.3.0",
+    "jest": "^16.0.1",
+    "jest-react-native": "^16.0.0",
+    "react-addons-test-utils": "~15.3.2",
+    "react-test-renderer": "^15.3.2"
   }
 }

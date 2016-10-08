@@ -1,0 +1,24 @@
+exports[`<App.Root> Template should render as expected 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 24,
+      }
+    }>
+    Welcome to 
+    Test
+  </Text>
+</View>
+`;
