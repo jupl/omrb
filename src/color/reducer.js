@@ -4,9 +4,9 @@ import {COLORS} from './config'
 
 /** Reducer that handles color related actions */
 export default handleActions({
-  [previousColor.type]: setPreviousColor,
-  [nextColor.type]: setNextColor,
-  [autoNextColor.type]: setNextColor,
+  [previousColor]: setPreviousColor,
+  [nextColor]: setNextColor,
+  [autoNextColor]: setNextColor,
 }, COLORS[0])
 
 /**

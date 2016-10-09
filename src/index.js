@@ -1,19 +1,16 @@
 import React, {Component} from 'react'
 import {AppRegistry} from 'react-native'
+import {APPLICATION_NAME} from './app/config'
 import Root from './app/components/root'
-import createStore from './app/store'
+import store from './app/store'
+import Container from './lib/components/container'
 
 /** Component that contains root component as a class for hot reloading */
 class Application extends Component {
-  constructor(...args) {
-    super(...args)
-    this.state = {store: createStore()}
-  }
-
   render() {
-    return <Root store={this.state.store} />
+    return <Container store={store} component={Root} />
   }
 }
 
 // Tell React Native to use our application component to render application
-AppRegistry.registerComponent('Application', () => Application)
+AppRegistry.registerComponent(APPLICATION_NAME, () => Application)

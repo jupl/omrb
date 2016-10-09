@@ -2,56 +2,43 @@
   "name": "Application",
   "version": "0.0.1",
   "private": true,
-  "ava": {
-    "babel": "inherit",
-    "require": [
-      "babel-register",
-      "babel-polyfill",
-      "react-native-mock/mock"
-    ],
-    "files": "src/**/*.test.js"
-  },
-  "nyc": {
-    "include": "src/**",
-    "exclude": "src/**/*.test.js"
-  },
   "engines": {
     "node": "^6.0.0",
     "npm": "^3.0.0"
   },
+  "jest": {
+    "preset": "jest-react-native"
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "coverage": "jest --coverage",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "coverage": "nyc npm test",
-    "coverage:html": "npm run coverage && nyc report --reporter=html",
-    "test": "ava",
-    "test:watch": "npm run test -- --watch"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "storybook": "storybook start -p 9001"
   },
   "dependencies": {
-    "cross-env": "^1.0.8",
-    "react": "^15.0.2",
-    "react-native": "^0.26.3",
-    "react-native-router-flux": "^3.26.17",
+    "react": "~15.3.2",
+    "react-native": "^0.34.1",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "redux-actions": "^0.9.1",
-    "redux-saga": "^0.10.4"
+    "redux-actions": "^0.12.0",
+    "redux-saga": "^0.12.0"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
-    "babel-eslint": "^6.0.4",
-    "enzyme": "^2.3.0",
-    "eslint": "^2.11.1",
-    "eslint-config-jupl": "^0.3.5",
+    "@kadira/react-native-storybook": "^2.1.4",
+    "babel-eslint": "^7.0.0",
+    "enzyme": "^2.4.1",
+    "eslint": "^3.7.1",
+    "eslint-config-jupl": "^0.4.0",
     "eslint-plugin-babel": "^3.2.0",
-    "eslint-plugin-react": "^5.1.1",
+    "eslint-plugin-react": "^6.3.0",
     "globule": "^1.0.0",
-    "nyc": "^6.4.4",
-    "react-addons-test-utils": "~15.0.2",
-    "react-dom": "~15.0.2",
-    "react-native-mock": "0.2.2",
-    "remote-redux-devtools": "^0.3.3",
-    "sinon": "^1.17.4"
+    "jest": "^16.0.1",
+    "jest-react-native": "^16.0.0",
+    "react-addons-test-utils": "~15.3.2",
+    "react-test-renderer": "~15.3.2",
+    "remote-redux-devtools": "^0.5.0"
   }
 }

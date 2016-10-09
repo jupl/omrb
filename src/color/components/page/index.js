@@ -1,19 +1,16 @@
-import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import ColorPage from './template'
-import merge from '../../../lib/merge'
 import {nextColor, previousColor} from '../../actions'
 
 /** Wrap color page component with data from store */
-export default connect(props, actions, merge)(ColorPage)
+export default connect(props, actions)(ColorPage)
 
 /**
  * Add Redux store data as properties to component
  * @param {Object} store - Current state from Redux store
- * @param {string} store.color - Color data from store
  * @return {Object} Props to pass to component
  */
-function props({color}) {
+export function props({color}) {
   return {color}
 }
 
@@ -22,6 +19,9 @@ function props({color}) {
  * @param {Function} dispatch - Redux store dispatch function
  * @return {Object} Props to pass to component
  */
-function actions(dispatch) {
-  return bindActionCreators({nextColor, previousColor}, dispatch)
+export function actions(dispatch) {
+  return {
+    onNextColor: () => dispatch(nextColor()),
+    onPreviousColor: () => dispatch(previousColor()),
+  }
 }

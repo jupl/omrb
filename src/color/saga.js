@@ -10,8 +10,8 @@ import {previousColor, nextColor, autoNextColor} from './actions'
 export default function* saga() {
   for(;;) {
     const {end} = yield race({
-      timeout: call(delay, 4000),
-      end: take([previousColor.type, nextColor.type]),
+      timeout: call(delay, 3000),
+      end: take([`${previousColor}`, `${nextColor}`]),
     })
     if(end) { break }
     yield put(autoNextColor())

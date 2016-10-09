@@ -1,54 +1,40 @@
 import React from 'react'
-import {TouchableHighlight} from 'react-native'
-import test from 'ava'
 import {shallow} from 'enzyme'
-import {spy} from 'sinon'
+import {TouchableHighlight} from 'react-native'
 import ColorPage from './template'
-import * as platform from '../../../lib/platform'
 
-let props
-
-test.beforeEach('reset props', () => {
-  props = {
-    actions: {
-      previousColor: spy(),
-      nextColor: spy(),
-    },
+describe('<Color.ColorPage> Template', () => {
+  const props = {
     color: 'white',
+    onPreviousColor: jest.fn(),
+    onNextColor: jest.fn(),
   }
-})
 
-/** @test {color.components.Page} */
-test('<ColorPage> - content', t => {
-  const wrapper = shallow(<ColorPage {...props} />)
-  t.true(wrapper.contains(['Welcome to ', platform.NAME]))
-})
+  // TODO Enable test and move require to top when React has fix
+  xit('should render as expected', () => {
+    const renderer = require('react-test-renderer')
+    const propsWithStyle = {...props, style: {top: 0}}
+    const component1 = renderer.create(<ColorPage {...props} />)
+    const component2 = renderer.create(<ColorPage {...propsWithStyle} />)
+    expect(component1.toJSON()).toMatchSnapshot()
+    expect(component2.toJSON()).toMatchSnapshot()
+  })
 
-/** @test {color.components.Page} */
-test('<ColorPage> - additional styles', t => {
-  const override = {top: 0}
-  const wrapper1 = shallow(<ColorPage {...props} />)
-  const wrapper2 = shallow(<ColorPage {...props} style={override} />)
-  t.false(wrapper1.prop('style').includes(override))
-  t.true(wrapper2.prop('style').includes(override))
-})
+  it('should invoke events as expected', () => {
+    const component = shallow(<ColorPage {...props} />)
+    const buttons = component.find(TouchableHighlight)
+    const previousButton = buttons.at(0)
+    const nextButton = buttons.at(1)
 
-/** @test {color.components.Page} */
-test('<ColorPage> - events', t => {
-  const {actions} = props
-  const wrapper = shallow(<ColorPage {...props} />)
-  const buttons = wrapper.find(TouchableHighlight)
-  const previousButton = buttons.at(0)
-  const nextButton = buttons.at(1)
+    expect(props.onPreviousColor).not.toBeCalled()
+    expect(props.onNextColor).not.toBeCalled()
 
-  t.false(actions.previousColor.called)
-  t.false(actions.nextColor.called)
+    previousButton.simulate('press')
+    expect(props.onPreviousColor.mock.calls.length).toBe(1)
+    expect(props.onNextColor).not.toHaveBeenCalled()
 
-  previousButton.simulate('press')
-  t.true(actions.previousColor.calledOnce)
-  t.false(actions.nextColor.called)
-
-  nextButton.simulate('press')
-  t.true(actions.previousColor.calledOnce)
-  t.true(actions.nextColor.calledOnce)
+    nextButton.simulate('press')
+    expect(props.onPreviousColor.mock.calls.length).toBe(1)
+    expect(props.onNextColor.mock.calls.length).toBe(1)
+  })
 })
