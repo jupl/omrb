@@ -904,11 +904,6 @@
       "from": "create-error-class@>=3.0.1 <4.0.0",
       "resolved": "https://registry.npmjs.org/create-error-class/-/create-error-class-3.0.2.tgz"
     },
-    "cross-env": {
-      "version": "3.1.2",
-      "from": "cross-env@>=3.1.1 <4.0.0",
-      "resolved": "https://registry.npmjs.org/cross-env/-/cross-env-3.1.2.tgz"
-    },
     "cross-spawn": {
       "version": "3.0.1",
       "from": "cross-spawn@>=3.0.1 <4.0.0",
