@@ -19,7 +19,7 @@
     "storybook": "storybook start -p 9001"
   },
   "dependencies": {
-    "react": "~15.3.2",
+    "react": "^15.3.2",
     "react-native": "^0.34.1",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
@@ -37,8 +37,8 @@
     "globule": "^1.0.0",
     "jest": "^16.0.1",
     "jest-react-native": "^16.0.0",
-    "react-addons-test-utils": "~15.3.2",
-    "react-test-renderer": "~15.3.2",
+    "react-addons-test-utils": "^15.3.2",
+    "react-test-renderer": "^15.3.2",
     "remote-redux-devtools": "^0.5.0"
   }
 }
