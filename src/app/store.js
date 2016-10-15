@@ -1,7 +1,7 @@
 import {APPLICATION_NAME} from './config'
 import reducer from './reducer'
 import saga from './saga'
-import createStore from '../lib/store'
+import createStore from '../lib/create-store'
 
 const store = createStore({name: APPLICATION_NAME, saga, reducer})
 

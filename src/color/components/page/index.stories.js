@@ -3,7 +3,7 @@ import {action, storiesOf} from '@kadira/react-native-storybook'
 import {Provider} from 'react-redux'
 import {combineReducers} from 'redux'
 import color from '../../reducer'
-import createStore from '../../../lib/store'
+import createStore from '../../../lib/create-store'
 import Component from './index'
 import Template from './template'
 
