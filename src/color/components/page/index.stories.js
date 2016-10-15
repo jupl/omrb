@@ -16,10 +16,8 @@ const store = createStore({
 // Default props for template module
 const props = {
   style: {flex: 1},
-  actions: {
-    previousColor: action('previousColor'),
-    nextColor: action('nextColor'),
-  },
+  onPreviousColor: action('previousColor'),
+  onNextColor: action('nextColor'),
 }
 
 // Define stories
