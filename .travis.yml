@@ -15,7 +15,3 @@ install:
 script:
   - yarn run lint
   - yarn run coverage
-  - yarn run build:dev
-  - yarn run build:prod
-  - yarn run build:docs
-  - yarn run lint
