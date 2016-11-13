@@ -14,6 +14,10 @@
 ## About
 This is a boilerplate project for developing a mid to a large scale client-side application(s) using JavaScript, [Babel](http://babeljs.io/), [React](https://facebook.github.io/react/), and [Redux](http://redux.js.org/). For an example project, visit the [example branch](https://github.com/jupl/omrb/tree/example).
 
+### Variants
+- [OMRB](https://github.com/jupl/omrb)
+- [OMRB with React Native](https://github.com/jupl/omrb/tree/native)
+
 [<sup>Back to top</sup>](#omrb-one-more-redux-boilerplate)
 
 ## Prerequisites
