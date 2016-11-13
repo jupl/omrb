@@ -1,0 +1,5 @@
+/assets/**
+/coverage/**
+/dist/**
+/docs/**
+/story/**
