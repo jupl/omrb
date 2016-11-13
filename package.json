@@ -56,6 +56,7 @@
     "eslint": "^3.8.1",
     "eslint-config-jupl": "^0.4.2",
     "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-react": "^6.6.0",
     "eventsource-polyfill": "^0.9.6",
     "fbjs-scripts": "^0.7.1",
     "hapi": "^15.1.1",
