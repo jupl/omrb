@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "jupl",
+    "jupl/esnext",
+    "jupl/babel",
+    "jupl/react"
+  ]
+}
