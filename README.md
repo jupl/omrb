@@ -12,7 +12,7 @@
 - [Project Resources](#project-resources)
 
 ## About
-This is a boilerplate project for developing a mid to a large scale client-side application(s) using JavaScript, [Babel](http://babeljs.io/), [React](https://github.com/facebook/react), and [Redux](http://redux.js.org/). For an example project, visit the [example branch](https://github.com/jupl/omrb/tree/example).
+This is a boilerplate project for developing a mid to a large scale client-side application(s) using JavaScript, [Babel](http://babeljs.io/), [React](https://facebook.github.io/react/), and [Redux](http://redux.js.org/). For an example project, visit the [example branch](https://github.com/jupl/omrb/tree/example).
 
 [<sup>Back to top</sup>](#omrb-one-more-redux-boilerplate)
 
