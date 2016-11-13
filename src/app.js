@@ -17,7 +17,6 @@ class Application extends Component {
       const updateReducer = this.setTimeout(this.updateReducer)
       module.hot.accept('./app/reducer', updateReducer)
       module.hot.accept('./app/saga', () => true)
-      module.hot.accept('./common/components/container', updateReducer)
     }
   }
 
