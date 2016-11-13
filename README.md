@@ -14,6 +14,10 @@
 ## About
 This is a boilerplate project for developing a mid to a large scale mobile application using JavaScript, [React](https://github.com/facebook/react), [React Native](https://facebook.github.io/react-native/), and [Redux](http://redux.js.org/). For an example project, visit the [native example branch](https://github.com/jupl/omrb/tree/native-example).
 
+### Variants
+- [OMRB](https://github.com/jupl/omrb)
+- [OMRB with React Native](https://github.com/jupl/omrb/tree/native)
+
 [<sup>Back to top</sup>](#omrb-one-more-redux-boilerplate)
 
 ## Prerequisites
