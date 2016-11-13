@@ -17,6 +17,7 @@
     "test:watch": "npm run test -- --watch",
     "server": "npm run server:hot",
     "server:hot": "cross-env NODE_ENV=development HOT_MODULES=true node hot-server",
+    "server:story": "cross-env NODE_ENV=storybook start-storybook -p 9001",
     "build": "npm run clean && cross-env HOT_MODULES=false webpack",
     "build:docs": "esdoc -c esdoc.json",
     "build:dev": "cross-env NODE_ENV=development npm run build",
