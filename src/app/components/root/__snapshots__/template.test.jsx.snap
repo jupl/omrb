@@ -2,13 +2,55 @@ exports[`<App.Root> Template should render as expected 1`] = `
 <div
   style={
     Object {
-      "alignItems": "center",
-      "background": "linear-gradient(transparent, gainsboro)",
+      "backgroundColor": "#39cccc",
       "display": "flex",
       "flex": 1,
-      "justifyContent": "center",
+      "transition": "background 0.8s ease-out",
     }
   }>
-  Hello, World
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "background": "linear-gradient(rgba(255, 255, 255, 0.4), transparent)",
+        "display": "flex",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "radial-gradient(white, gainsboro)",
+          "borderColor": "gainsboro",
+          "borderRadius": "50%",
+          "outline": "none",
+        }
+      }>
+      <
+    </button>
+    <span
+      style={
+        Object {
+          "marginLeft": 4,
+          "marginRight": 4,
+        }
+      }>
+      Hello, World
+    </span>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "radial-gradient(white, gainsboro)",
+          "borderColor": "gainsboro",
+          "borderRadius": "50%",
+          "outline": "none",
+        }
+      }>
+      >
+    </button>
+  </div>
 </div>
 `;
