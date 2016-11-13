@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 /** Styling for root page */
 const PAGE_STYLE = {
