@@ -130,6 +130,9 @@ yarn run lint
 ### `server:story`
 Start a local server for React Native Storybook. For more information visit the [documentation for React Native Storybook](https://github.com/storybooks/react-native-storybook#start-the-storybook).
 
+### `build:docs`
+Build detailed code documentation in the `docs/api/` directory.
+
 ### `test`
 Run tests once using Jest. For more information visit the [documentation for Jest](facebook.github.io/jest/docs/configuration.html).
 
