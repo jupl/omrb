@@ -11,8 +11,7 @@ import createStore from './common/create-store'
 class Application extends Component {
   constructor(...args) {
     super(...args)
-    this.state.store = createStore({reducer, saga})
-
+    this.state = {store: createStore({reducer, saga})}
     if(module.hot) {
       module.hot.accept(() => setTimeout(() => this.updateReducer()))
     }
