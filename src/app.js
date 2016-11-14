@@ -14,18 +14,13 @@ class Application extends Component {
     this.store = createStore({reducer, saga})
 
     if(module.hot) {
-      const updateReducer = this.setTimeout(this.updateReducer)
-      module.hot.accept('./app/reducer', updateReducer)
-      module.hot.accept('./app/saga', () => true)
+      module.hot.accept(() => setTimeout(() => this.updateReducer()))
     }
   }
 
-  setTimeout(thisFunc) {
-    return () => setTimeout(() => Reflect.apply(thisFunc, this))
-  }
-
   updateReducer() {
-    this.store.replaceReducer(reducer)
+    const {default: newReducer} = require('./app/reducer')
+    this.store.replaceReducer(newReducer)
   }
 
   render() {
