@@ -9,19 +9,29 @@ import createStore from './common/create-store'
 
 /** Component that contains root component as a class for hot reloading */
 class Application extends Component {
-  constructor(...args) {
-    super(...args)
+  /** Initialize component, including Redux store instance. */
+  constructor() {
+    super()
     this.state = {store: createStore({reducer, saga})}
     if(module.hot) {
       module.hot.accept(() => setTimeout(() => this.updateReducer()))
     }
   }
 
+  /**
+   * Update the reducer for the store. This may be called multiple times when a
+   * hot reload occurs.
+   * @return {void}
+   */
   updateReducer() {
     const {default: newReducer} = require('./app/reducer')
     this.state.store.replaceReducer(newReducer)
   }
 
+  /**
+   * Render application to the container.
+   * @return {void}
+   */
   render() {
     return <Container store={this.state.store} component={Root} />
   }

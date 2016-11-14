@@ -22,7 +22,8 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "server": "node node_modules/react-native/local-cli/cli.js start",
-    "server:story": "storybook start -p 9001"
+    "server:story": "storybook start -p 9001",
+    "build:docs": "esdoc -c esdoc.json"
   },
   "dependencies": {
     "babel-preset-react-native": "^1.9.0",
