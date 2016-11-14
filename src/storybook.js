@@ -5,7 +5,7 @@ import {APPLICATION_NAME} from './app/config'
 
 // Load all stories defined in our codebase
 configure(() => {
-  // Require stories
+  require('./color/components/page/index.stories')
 }, module)
 
 // Tell React Native to use storybook to render application

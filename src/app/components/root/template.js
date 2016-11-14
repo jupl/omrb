@@ -1,12 +1,11 @@
 import React from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet} from 'react-native'
+import ColorPage from '../../../color/components/page'
 
 /** Styling for root page */
 const {PAGE_STYLE} = StyleSheet.create({
   PAGE_STYLE: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 })
 
@@ -16,8 +15,6 @@ const {PAGE_STYLE} = StyleSheet.create({
  */
 export default function Root() {
   return (
-    <View style={PAGE_STYLE}>
-      <Text>Hello, World</Text>
-    </View>
+    <ColorPage style={PAGE_STYLE} />
   )
 }
