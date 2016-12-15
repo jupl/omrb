@@ -11,7 +11,7 @@ const PAGE_STYLE = {
 
 /**
  * Render root component representing the entire application
- * @return {React.ReactElement} Root component
+ * @return {React.Element} Root component
  */
 export default function Root() {
   return <div style={PAGE_STYLE}>Hello, World</div>

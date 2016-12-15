@@ -4,10 +4,14 @@ const {CommonsChunkPlugin} = require('webpack').optimize
 const {resolve} = require('./util')
 
 /**
+ * @typedef {Object} BaseOptions
+ * @property {string} source Source path to read source code from
+ * @property {string} destination Destination path to write assets out
+ */
+
+/**
  * Build base Webpack configuration with defaults that can be expanded upon
- * @param {Object} options - Options
- * @param {string} options.source - Source path to read source code from
- * @param {string} options.destination - Destination path to write assets out
+ * @param {BaseOptions} options Options
  * @return {Object} Webpack configuration
  */
 module.exports = ({source, destination}) => {
@@ -47,7 +51,7 @@ module.exports = ({source, destination}) => {
 /**
  * Build entries configuration for Webpack based on our app structure by
  * looking for all top-level JS files in source to compile
- * @param {string} source - Source directory
+ * @param {string} source Source directory
  * @return {Object} Entries configuration for Webpack
  */
 function entries(source) {

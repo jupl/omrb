@@ -6,8 +6,15 @@ import createSagaMiddleware from 'redux-saga'
 const devToolsAvailable = !!window.__REDUX_DEVTOOLS_EXTENSION__
 
 /**
+ * @typedef {Object} StoreOptions
+ * @property {Function} reducer Redux reducer
+ * @property {Saga?} saga Redux saga generator
+ * @property {Object?} initialState Initial store state
+ */
+
+/**
  * Create a Redux store complete with potential development settings and saga
- * @param {Object} options - Options to construct store with as well
+ * @param {StoreOptions} options Options to construct store with as well
  * @return {Object} Redux store instance
  */
 export default function newStore({reducer, saga, initialState, ...config}) {
