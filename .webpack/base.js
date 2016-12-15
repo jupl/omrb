@@ -23,11 +23,11 @@ module.exports = ({source, destination}) => {
       publicPath: '/',
     },
     module: {
-      loaders: [
-        {test: /\.jsx?$/, loader: 'babel'},
-        {test: /\.json$/, loader: 'json'},
-        {test: /\.css$/, loader: 'style!css'},
-        {test: /\.(gif|jpg|jpeg|png|svg)$/, loader: 'file'},
+      rules: [
+        {test: /\.jsx?$/, use: ['babel-loader']},
+        {test: /\.json$/, use: ['json-loader']},
+        {test: /\.css$/, use: ['style-loader', 'css-loader']},
+        {test: /\.(gif|jpg|jpeg|png|svg)$/, use: ['file-loader']},
       ],
     },
     resolve: {
