@@ -8,7 +8,7 @@ const PAGE_STYLE = {
 
 /**
  * Render root component representing the entire application
- * @return {React.ReactElement} Root component
+ * @return {React.Element} Root component
  */
 export default function Root() {
   return <ColorPage style={PAGE_STYLE} />
