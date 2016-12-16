@@ -64,7 +64,7 @@
     "esdoc": "^0.4.8",
     "esdoc-es7-plugin": "^0.0.3",
     "eslint": "^3.8.1",
-    "eslint-config-jupl": "^0.4.2",
+    "eslint-config-jupl": "^0.5.0",
     "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-react": "^6.6.0",
     "eventsource-polyfill": "^0.9.6",

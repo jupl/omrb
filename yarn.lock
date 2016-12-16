@@ -2474,9 +2474,9 @@ esdoc@^0.4.8:
     minimist "1.1.1"
     taffydb "2.7.2"
 
-eslint-config-jupl@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-jupl/-/eslint-config-jupl-0.4.2.tgz#b1b8beb3a5e6b9e0b78763101e20201ce3b45b9a"
+eslint-config-jupl@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-jupl/-/eslint-config-jupl-0.5.0.tgz#4aceb2445616d8e375f9dbe995efa2127bd277c4"
 
 eslint-plugin-babel@^4.0.0:
   version "4.0.0"
