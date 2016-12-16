@@ -7,7 +7,6 @@
   "extends": [
     "jupl",
     "jupl/esnext",
-    "jupl/babel",
     "jupl/react"
   ]
 }
