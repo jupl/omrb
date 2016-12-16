@@ -3,7 +3,7 @@ import * as actions from './actions'
 
 describe('Color reducer', () => {
   // Inital state
-  const state0 = reducer(undefined, {type: ''})
+  const state0 = reducer(null, {type: ''})
 
   it('should start with initial state', () => {
     expect(state0).toMatchSnapshot()
