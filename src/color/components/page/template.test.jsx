@@ -9,8 +9,7 @@ describe('<Color.ColorPage> Template', () => {
     onNextColor: jest.fn(),
   }
 
-  // TODO Enable test and move require to top when React has fix
-  xit('should render as expected', () => {
+  it('should render as expected', () => {
     const renderer = require('react-test-renderer')
     const propsWithStyle = Object.assign({}, props, {style: {top: 0}})
     const component1 = renderer.create(<ColorPage {...props} />)
