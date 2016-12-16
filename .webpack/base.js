@@ -31,7 +31,11 @@ module.exports = ({source, destination}) => {
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.json'],
+      extensions: [
+        '.js',
+        '.jsx',
+        '.json',
+      ],
     },
     plugins: [],
   }
@@ -56,7 +60,7 @@ module.exports = ({source, destination}) => {
  */
 function entries(source) {
   const files = find(resolve(source, '*.{js,jsx}'))
-  return files.reduce((obj, file) => Object.assign(obj, {
-    [basename(file, extname(file))]: [file],
-  }), {})
+  return files
+    .map(file => ({file, base: basename(file, extname(file))}))
+    .reduce((obj, {base, file}) => Object.assign(obj, {[base]: [file]}), {})
 }
