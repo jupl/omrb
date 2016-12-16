@@ -1,4 +1,5 @@
 import React from 'react'
+import renderer from 'react-test-renderer'
 import {shallow} from 'enzyme'
 import ColorPage from './template'
 
@@ -10,7 +11,6 @@ describe('<Color.ColorPage> Template', () => {
   }
 
   it('should render as expected', () => {
-    const renderer = require('react-test-renderer')
     const propsWithStyle = Object.assign({}, props, {style: {top: 0}})
     const component1 = renderer.create(<ColorPage {...props} />)
     const component2 = renderer.create(<ColorPage {...propsWithStyle} />)
