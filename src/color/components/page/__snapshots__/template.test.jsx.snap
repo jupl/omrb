@@ -1,110 +1,21 @@
 exports[`<Color.ColorPage> Template should render as expected 1`] = `
 <div
-  style={
-    Object {
-      "backgroundColor": "white",
-      "display": "flex",
-      "transition": "background 0.8s ease-out",
-    }
-  }>
+  className="cPPbgF"
+  color="white">
   <div
-    style={
-      Object {
-        "alignItems": "center",
-        "background": "linear-gradient(rgba(255, 255, 255, 0.4), transparent)",
-        "display": "flex",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
+    className="ijXwvP">
     <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "radial-gradient(white, gainsboro)",
-          "borderColor": "gainsboro",
-          "borderRadius": "50%",
-          "outline": "none",
-        }
-      }>
+      className="bwNSRs"
+      onClick={[Function]}>
       <
     </button>
     <span
-      style={
-        Object {
-          "marginLeft": 4,
-          "marginRight": 4,
-        }
-      }>
+      className="gsqXms">
       Hello, World
     </span>
     <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "radial-gradient(white, gainsboro)",
-          "borderColor": "gainsboro",
-          "borderRadius": "50%",
-          "outline": "none",
-        }
-      }>
-      >
-    </button>
-  </div>
-</div>
-`;
-
-exports[`<Color.ColorPage> Template should render as expected 2`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "white",
-      "display": "flex",
-      "top": 0,
-      "transition": "background 0.8s ease-out",
-    }
-  }>
-  <div
-    style={
-      Object {
-        "alignItems": "center",
-        "background": "linear-gradient(rgba(255, 255, 255, 0.4), transparent)",
-        "display": "flex",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "radial-gradient(white, gainsboro)",
-          "borderColor": "gainsboro",
-          "borderRadius": "50%",
-          "outline": "none",
-        }
-      }>
-      <
-    </button>
-    <span
-      style={
-        Object {
-          "marginLeft": 4,
-          "marginRight": 4,
-        }
-      }>
-      Hello, World
-    </span>
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "radial-gradient(white, gainsboro)",
-          "borderColor": "gainsboro",
-          "borderRadius": "50%",
-          "outline": "none",
-        }
-      }>
+      className="bwNSRs"
+      onClick={[Function]}>
       >
     </button>
   </div>

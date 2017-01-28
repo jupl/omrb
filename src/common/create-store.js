@@ -25,7 +25,7 @@ export default function newStore({reducer, saga, initialState, ...config}) {
   middlewares = sagaMiddleware ? [...middlewares, sagaMiddleware] : middlewares
 
   // Add redux-logger middleware in development when there's no Redux DevTools
-  if(process.env.NODE_ENV !== 'production' && devToolsAvailable) {
+  if(process.env.NODE_ENV !== 'production' && !devToolsAvailable) {
     const createLogger = require('redux-logger')
     middlewares = [...middlewares, createLogger()]
   }

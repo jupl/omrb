@@ -19,12 +19,3 @@ Object {
   "style": undefined,
 }
 `;
-
-exports[`<Color.ColorPage> should inject props from store as expected 2`] = `
-Object {
-  "color": "red",
-  "style": Object {
-    "flex": 1,
-  },
-}
-`;
