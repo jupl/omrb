@@ -13,8 +13,7 @@ const container = document.getElementById('container')
 // Create Redux store instance
 const store = createStore({reducer, saga})
 
-// Style container and render application. Also register to rerender/restyle if
-// hot loading is available.
+// Render application. Also register to rerender if hot loading is available.
 if(module.hot) {
   module.hot.accept('./app/components/root', () => setTimeout(render))
   module.hot.accept('./app/reducer', () => setTimeout(updateReducer))
