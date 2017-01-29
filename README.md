@@ -67,6 +67,7 @@ omrb/
 ├─ esdoc.json        # ESDoc configuration
 ├─ hot─server.js     # Source code for local development server
 ├─ package.json      # Configuration, tasks, and dependencies
+├─ setup-tests.js    # Source code to run before execution of tests
 ├─ webpack.config.js # Webpack build configuration
 └─ yarn.lock         # Dependency pinning from Yarn
 ```
@@ -104,7 +105,7 @@ React componenjs are grouped in a directory.
 ### Other Files
 
 #### `*.test.js`, `*.test.jsx`
-Tests for components/domains/logic/etc. Some guides on tests include:
+Tests for components/domains/logic/etc. If code needs to be run before tests are executed see `setup-tests.js` Some guides on tests include:
 - [Jest](https://facebook.github.io/jest/docs/api.html)
 - [Enzyme](http://airbnb.io/enzyme/index.html#basic-usage)
 - [React](https://facebook.github.io/jest/docs/tutorial-react.html)
@@ -180,6 +181,7 @@ Run converage once and rerun on changes using Jest.
   - [Redux](http://redux.js.org/)
     - [Redux Saga](http://yelouafi.github.io/redux-saga/)
     - [Redux Actions](https://github.com/acdlite/redux-actions)
+  - [Styled Components](https://styled-components.com/)
   - [normalize.css](https://necolas.github.io/normalize.css/)
 - Testing
   - [Jest](http://facebook.github.io/jest/)

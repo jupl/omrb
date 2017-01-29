@@ -10,7 +10,8 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "<rootDir>/src/common/create-store.js"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/setup-tests.js"
   },
   "scripts": {
     "start": "npm run build:prod",
