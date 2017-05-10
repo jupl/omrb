@@ -1,4 +1,6 @@
 # OMRB <sub><sub><sub>One More Redux Boilerplate</sub></sub></sub>
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/jupl/omrb.svg)](https://greenkeeper.io/)
 [![Travis](http://img.shields.io/travis/jupl/omrb.svg?style=flat-square&label=travis)](https://travis-ci.org/jupl/omrb)
 [![Dependencies](http://img.shields.io/david/jupl/omrb.svg?style=flat-square)](https://david-dm.org/jupl/omrb)
 [![Dev Dependencies](http://img.shields.io/david/dev/jupl/omrb.svg?style=flat-square)](https://david-dm.org/jupl/omrb?type=dev)
